@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Syntax Error Project</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-text">WELCOME TO THE FUTURE!</div>
+    </div>
+    <div class="content" id="mainContent" style="display: none;">
+
+        <div class="banner">
+            <div class="another-box"></div>
+            <div class="left-box">
+                <div class="wrapper">
+                    <div class="vertical-line"></div>
+                    <ul>
+                        <li><a href="https://github.com/eyescratcher22" target="_blank">Amitesh</a></li>
+                        <li><a href="https://github.com/Omdaddi" target="_blank">Om Daddi</a></li>
+                        <li><a href="http://www.github.com/Bhavya1835" target="_blank">Bhavya</a></li>
+                        <li><a href="https://github.com/saurav250" target="_blank">Saurav</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="right-box">
+                <div class="circle"></div>
+                <nav>
+                    <ul>
+                        <li><a href="file:///C:/Amitesh/frontpage.html">HOME</a></li>
+                        <li><a href="file:///C:/Amitesh/SYNTAX%20ERROR/templates/our-model.html">OUR-MODEL</a></li>
+                        <li><a href="C:\Amitesh\frontpage.html#teams">TEAM</a></li>
+
+                    </ul>
+                </nav>
+                <h2>Future of <br> Fuel Stations</h2>
+                <div class="city-container">
+                    <form action="/" method="post" id="cityForm">
+                        <select name="city" class="city" id="citySelect" onchange="redirectToCity()">
+                            <option value="Select your city/state">Select City/State</option>
+                            <option value="uttarakhand">UTTARAKHAND</option>
+                            <option value="goa">GOA</option>
+                            <option value="delhi">DELHI</option>
+                        </select>
+                        
+
+
+                    </form>
+                    <div class="redirect">
+                        <a href="#" target="_blank" id="redirectArrow">
+                            <img src="arrow.png" alt="Arrow">
+                        </a>
+                    </div>
+                    <p class="p1">As we move toward a sustainable future, the integration of green fuels is essential.
+                        We have developed a model designed to identify optimal locations for the installation of green
+                        fuel stations, tailored to specific regions—whether state-wise or city-wise.
+
+                        One significant challenge is that areas with high population density often struggle to utilize
+                        available fuels effectively due to a lack of accessible green fuel options. To illustrate this,
+                        we will present an image highlighting these high-density regions.
+
+                        In response to this challenge, our model analyzes data from densely populated areas, taking into
+                        account factors such as population density, terrain, and existing road infrastructure. This
+                        analysis enables us to propose approximate locations for the establishment of new green fuel
+                        pumps.
+
+                        We will provide a detailed map of your state, showcasing potential sites for various types of
+                        green fuel stations, including CNG, electric charging stations, and hydrogen fuel pumps. This
+                        initiative aims to enhance access to sustainable fuel options and support the transition to
+                        greener transportation solutions.</p>
+
+                </div>
+                <div class="map">
+                    <img src="map.png" alt="Map">
+                    <h1>Hactivate</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="left-box">.</div>
+
+        <!-- About Me Section -->
+        <section class="about-me">
+            <h2>About Me</h2>
+            <p>Hello! I'm Amitesh, a passionate Frontend Developer dedicated to creating intuitive and dynamic user
+                experiences. I love coding, design, and exploring new technologies. In my free time, I enjoy photography
+                and traveling.</p>
+        </section>
+
+        <!-- Welcome to My Team Section -->
+        <section class="team" id="teams">
+            <h2>Welcome to My Team</h2>
+            <div class="container">
+                <div class="profile">
+                    <img src="amitesh.jpg" alt="Amitesh">
+                    <p>Amitesh</p>
+                    <p>Frontend Developer</p>
+                    <p>Email: amiteshsonwani22@gmail.com</p>
+                </div>
+                <div class="profile">
+                    <img src="saurav.jpg" alt="Saurav">
+                    <p>Saurav</p>
+                    <p>Backend Developer</p>
+                    <p>Email: sauravgarg714@gmail.com</p>
+                </div>
+                <div class="profile">
+                    <img src="om.jpg" alt="om">
+                    <p>Om Daddi</p>
+                    <p>Map Designer</p>
+                    <p>Email: omdaddi45@gmail.com </p>
+                </div>
+                <div class="profile">
+                    <img src="bhavya.jpg" alt="Bhavya">
+                    <p>Bhavya</p>
+                    <p>Designer</p>
+                    <p>Email: bhavyakakkad1234@gmail.com</p>
+                </div>
+            </div>
+        </section>
+
+
+
+
+    </div>
+
+</body>
+
+</html>
+
+<div class="smallCursor"></div>
+<div class="largeCursor"></div>
+
+<script>
+    window.onload = function() {
+        const loadingScreen = document.getElementById('loadingScreen');
+        const mainContent = document.getElementById('mainContent');
+
+        setTimeout(() => {
+            loadingScreen.style.opacity = 0;
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+                mainContent.style.display = 'block'; // Show the main content
+            }, 500);
+        }, 2000);
+    };
+
+    var smallCursor = document.querySelector(".smallCursor");
+    var largeCursor = document.querySelector(".largeCursor");
+
+    document.onmousemove = function(e){
+        smallCursor.style.left = (e.pageX - 5) + "px";
+        smallCursor.style.top = (e.pageY - 5) + "px";
+        smallCursor.style.display = "block";
+
+        largeCursor.style.left = (e.pageX - 22) + "px";
+        largeCursor.style.top = (e.pageY - 22) + "px";
+        largeCursor.style.display = "block";
+    };
+
+    function redirectToCity() {
+    const citySelect = document.getElementById('citySelect');
+    const selectedCity = citySelect.value;
+    const redirectArrow = document.getElementById('redirectArrow');
+
+    // Update the href of the redirectArrow based on the selected city/state
+    if (selectedCity === 'uttarakhand') {
+        redirectArrow.href = 'C:\\Amitesh\\SYNTAX ERROR\\templates\\uttarakhand.html';
+    } else if (selectedCity === 'delhi') {
+        redirectArrow.href = 'C:\\Amitesh\\SYNTAX ERROR\\templates\\delhi.html';
+    } else if (selectedCity === 'goa') {
+        redirectArrow.href = 'C:\\Amitesh\\SYNTAX ERROR\\templates\\goa.html';
+    } else {
+        redirectArrow.href = '#'; // Set it to a default value if no city is selected
+    }
+}
+
+</script>
+
+
+
+</body>
+
+</html>
