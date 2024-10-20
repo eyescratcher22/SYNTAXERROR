@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(to right, #5c412d 20%, #e5d3c2 20%);
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 800px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .profile {
+            background: #f8f1e7;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile img {
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            object-fit: cover;
+        }
+
+        .profile p {
+            margin: 5px 0;
+        }
+
+        .profile p:first-child {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+            <img src="../static/img/amitesh.jpg" alt="AMITESH">
+            <p>AMITESH</p>
+            <p>Frontend Developer</p>
+            <p>Email: amiteshsonwani22@gmail.com</p>
+        </div>
+
+        <div class="profile">
+            <img src="../static/img/amitesh.jpg" alt="Saurav">
+            <p>SAURAV</p>
+            <p>Backend Developer</p>
+            <p>Email:sauravgarg714@gmail.com </p>
+        </div>
+
+        <div class="profile">
+            <img src="../static/img/om.jpg" alt="om">
+            <p>OM DADDI</p>
+            <p>Map Designer</p>
+            <p>Email: omdaddi45@gmail.com</p>
+        </div>
+
+        <div class="profile">
+            <img src="../static/img/bhavya.jpg" alt="Bhavya">
+            <p>BHAVYA</p>
+            <p>Designer</p>
+            <p>Email:bhavyakakkad1234@gmail.com</p>
+        </div>
+    </div>
+</body>
+</html>

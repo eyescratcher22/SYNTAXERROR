@@ -1,30 +1,13 @@
-/* Existing CSS... */
 *{
     margin: 0;
     padding: 0;
 }
 body{
-    background: #5c412d;
+    background: #000;
     color: #fff;
     font-family: fantasy;
+    overflow: hidden;
 } 
-
-
-
-.content {
-    display: none; /* Hide content initially */
-    background: #e5d3c2; /* Set main content area background */
-    min-height: 100vh; /* Ensure the content takes at least full viewport height */
-    position: relative; /* For absolute positioning of inner elements */
-    z-index: 1; /* Ensure it stays above the background */
-}
-
-
-
-
-
-
-
 .loading-screen {
     position: fixed;
     top: 0;
@@ -45,22 +28,9 @@ body{
     color: #e5d3c2;
 }
 
-.banner {
-    display: flex;
-    height: 100vh; /* Ensure the banner takes full viewport height */
-}
 
-.left-box {
-    flex-basis: 15%;
-    background: #5c412d;
-    min-height: 100%;
-}
-
-.right-box {
-    flex-basis: 85%;
-    background: #e5d3c2;
-    height: 100vh; /* Full height */
-    position: relative; /* Keep the positioning for inner content */
+.content {
+    display: none; /* Hide content initially */
 }
 
 .banner{
@@ -71,11 +41,6 @@ body{
 .left-box{
     flex-basis: 15%;
     background: #5c412d;
-}
-.another-box{
-    flex-basis: 1%;
-    background: #5c412d;
-    
 }
 .right-box{
     flex-basis: 85%;
@@ -164,7 +129,7 @@ nav ul li a{
 }
 .city-container {
     display: flex;
-    align-items: center; 
+    align-items: center; /* Vertically center the dropdown and arrow */
 }
 
 .city {
@@ -174,12 +139,6 @@ nav ul li a{
     border: 1px solid #ccc;
     width: 500px;
     height: 60px;
-}
-
-.p1{
-    width: 750px;
-    height: 500px;
-    margin-top: 30px;
 }
 
 .redirect {
@@ -240,162 +199,3 @@ a{
     border: 1px solid #ccc; 
     border-radius: 5px; 
 }
-
-
-::-webkit-scrollbar{
-    width: 15px ;
-}
-
-::-webkit-scrollbar-track{
-    background: #e5d3c2;
-}
-
-::-webkit-scrollbar-thumb{
-    background: #5c412d;
-    border-radius: 10px;
-
-}
-
-
-
-
-
-
-/* for the team page, amitesh yaha se maine kiya tera kuch cherkhani nhi ki */
-
-
-
-.container {
-    max-width: 800px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding: 20px;
-}
-
-.profile {
-    background: #e5d3c2;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.profile img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
-
-}
-
-.profile img:hover {
-    transform: scale(1.1); /* Scale the image slightly */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
-}
-
-.profile p {
-    margin: 5px 0;
-}
-
-.profile p:first-child {
-    font-weight: bold;
-}
-
-.container-wrapper {
-    background: #e5d3c2; /* Same color as right-box */
-    padding: 20px 0; /* Add padding for spacing */
-}
-
-.profile p {
-    margin: 5px 0;
-    color: #4a4a4a; /* Change this to your desired color */
-}
-
-.profile p:first-child {
-    font-weight: bold;
-    color: #ffffff; /* Example: make the name bold and white */
-}
-
-
-
-
-
-
-
-/* About Me Section */
-.about-me {
-    background: #e5d3c2;
-    color: #5c412d;
-    padding: 40px;
-    text-align: center;
-    animation: fadeIn 1s ease;
-}
-
-.about-me h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-.about-me p {
-    font-size: 1.2em;
-    line-height: 1.5;
-}
-
-/* Team Section */
-.team {
-    background: #5c412d; /* Dark background color */
-    color: #e5d3c2;
-    padding: 40px;
-    text-align: center;
-}
-
-.team h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-.container {
-    max-width: 1200px; /* Increased for team section */
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    margin: 0 auto; /* Center the container */
-}
-
-.profile {
-    background: rgb(244, 227, 203);
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
-    animation: fadeInUp 0.5s ease; /* Add animation */
-}
-
-.profile img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.profile:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Additional styles... */

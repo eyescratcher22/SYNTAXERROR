@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Model</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-elements"></div>
+    <div class="container">
+        <h1 class="header">Our Model</h1>
+        <p class="description">1. A Map was created in which additional features are added. That included highlighting major roads, marking existing petrol pumps and making population density heat zones.
+
+            The maps were made using QJIS software and its available data was used.
+            
+            <br>
+            2. Now, A code was written which used AI to read and interpret the map and then calculated the optimum locations by increasing value of a point on the road if it is closer high population zones and decreasing it if was nearby other existing pumps.
+            
+            Code was written in python and its OpenCV library was used to analyze and graph images. Also, MatPlot library to plot image and networkx library to calculate paths were used as well.     
+             
+            <br>
+            3. The final step included making a website which displayed the output of code according to city/state chosen by user.
+            
+            Website was made on html and designed using CSS.</p>
+    </div>
+</body>
+</html>
+
+
+<style>
+    body {
+    margin: 0;
+    height: 100vh;
+    background-color: #e5d3c2; /* Background color */
+    position: relative; /* For positioning background elements */
+    overflow: hidden; /* Prevents scrolling */
+}
+
+.background-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1; /* Behind other content */
+}
+
+.background-elements::before,
+.background-elements::after {
+    content: '';
+    position: absolute;
+    background-color: rgba(150, 150, 150, 0.2); /* Light gray with transparency */
+}
+
+.background-elements::before {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%; /* Circle */
+    top: 50%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+}
+
+.background-elements::after {
+    width: 200px;
+    height: 200px;
+    background-color: rgba(150, 150, 150, 0.4); /* Darker gray */
+    top: 30%;
+    right: 10%;
+}
+
+.container {
+    position: relative;
+    z-index: 2; /* Above background elements */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align content */
+    justify-content: center; /* Center content vertically */
+    height: 100%; /* Full height */
+}
+
+.header {
+    font-size: 36px; /* Header size */
+    font-weight: bold; /* Bold text */
+    color: #5c412d; /* Initial header color */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.header:hover {
+    color: #7f5d4a; /* Color change on hover */
+}
+
+.description {
+    font-size: 18px; /* Paragraph size */
+    color: #333; /* Text color */
+    text-align: center; /* Center align text */
+    max-width: 600px; /* Limit paragraph width */
+    margin: 20px 0; /* Margin around the paragraph */
+}
+
+</style>

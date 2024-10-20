@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use the Model</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <a href="#" class="model-button" id="modelButton">USE THE MODEL</a>
+        <h1 class="header">Given Input Model:</h1>
+        <img src="../static/img/goa.jpg" alt="Your Image" class="main-image">
+    </div>
+    <img src="../static/img/hehe.jpg" alt="Bottom Right Image" class="bottom-right-image"> <!-- Positioned Image -->
+    <script>
+        const button = document.getElementById('modelButton');
+        button.addEventListener('click', () => {
+            fetch('http://localhost:3000/generate-image', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({name: "goa"})
+            })
+            .then(response => response.blob())
+            .then(imageBlob => {
+                const imageObjectURL = URL.createObjectURL(imageBlob);
+                const image = document.createElement('img');
+                image.src = imageObjectURL;
+                document.body.appendChild(image);
+            });
+        });
+    </script>
+</body>
+</html>
+
+<style>
+ * {
+    box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: white; /* Background color */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    position: relative; /* Allow positioning of children */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center elements in the container */
+    justify-content: flex-start; /* Align to the top */
+    padding: 20px; /* Add some padding */
+}
+
+.model-button {
+    display: inline-block;
+    padding: 15px 30px; /* Button padding */
+    font-size: 20px; /* Font size */
+    color: white; /* Text color */
+    background-color: #5c412d; /* Button background color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 25px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+    margin-bottom: 0px; /* Space below the button */
+    margin-top: 10px;
+}
+
+.model-button:hover {
+    background-color: #7f5d4a; /* Lighter shade on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.model-button.inverted {
+    background-color: white; /* Inverted background color */
+    color: #5c412d; /* Inverted text color */
+    border: 2px solid #5c412d; /* Border to maintain visibility */
+}
+
+.header {
+    margin: 20px 0; /* Space around header */
+    font-size: 28px; /* Larger font size */
+    font-weight: bold; /* Bold font weight */
+    color: #5c412d; /* Match button color */
+    font-family: 'Georgia', serif; /* Elegant font */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    text-align: center; /* Center align the header */
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.main-image {
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 600px; /* Limit maximum width */
+}
+
+.bottom-right-image {
+    position: fixed; /* Fixed positioning */
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    width: 160px; /* Increased width to 160px (2 times 80px) */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 10; /* Ensure it appears above other content */
+}
+
+
+
+</style>
